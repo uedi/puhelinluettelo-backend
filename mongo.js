@@ -18,7 +18,7 @@ const Person = mongoose.model('Person', personSchema)
 
 const getPersons = () => {
     mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-    console.log("phonebook:")
+    console.log('phonebook:')
     Person.find({}).then(result => {
         result.forEach(person => {
             console.log(`${person.name} ${person.number}`)
@@ -44,5 +44,5 @@ if(process.argv.length === 3) {
 } else if(process.argv.length === 5) {
     addPerson(process.argv[3], process.argv[4])
 } else {
-    console.log("invalid number of arguments")
+    console.log('invalid number of arguments')
 }
